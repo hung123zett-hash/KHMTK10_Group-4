@@ -1,20 +1,19 @@
 import tkinter as tk
-from controller import EmployeeController
+import controller
 
 def main():
     root = tk.Tk()
+    root.title("Phần mềm Quản lý Lương Nhân Viên - MVC & Functions")
+    root.geometry("1500x800")
     
-    # Áp dụng theme nếu có
     try:
         root.tk.call("source", "azure.tcl")
         root.tk.call("set_theme", "light")
     except Exception:
         pass 
         
-    # Khởi tạo Controller (Controller sẽ tự động khởi tạo Model và View)
-    app = EmployeeController(root)
+    controller.main(root)
     
-    # Chạy vòng lặp sự kiện chính của Tkinter
     root.mainloop()
 
 if __name__ == "__main__":
